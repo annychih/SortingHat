@@ -16,10 +16,12 @@
             height: 100vh;
             margin: 0;
         }
+        /* MODIFIED: Updated hat class for GIF dimensions */
         .hat {
-            width: 200px;
-            height: 200px;
+            width: 300px;
+            height: 300px;
             margin-bottom: 2rem;
+            object-fit: contain;
         }
         .password-form {
             background: rgba(255, 255, 255, 0.1);
@@ -61,25 +63,10 @@
     </style>
 </head>
 <body>
-    <svg class="hat" viewBox="0 0 100 100">
-        <path d="M20,70 Q50,20 80,70" fill="none" stroke="#8b4513" stroke-width="4">
-            <animate attributeName="d" 
-                     dur="2s" 
-                     values="M20,70 Q50,20 80,70;M20,70 Q50,30 80,70;M20,70 Q50,20 80,70" 
-                     repeatCount="indefinite"/>
-        </path>
-        <path d="M15,70 L85,70 L50,90 Z" fill="#8b4513">
-            <animate attributeName="transform" 
-                     attributeType="XML" 
-                     type="scale" 
-                     values="1;1.05;1" 
-                     dur="2s" 
-                     repeatCount="indefinite"/>
-        </path>
-    </svg>
+    <img src="sorting-hat.gif" alt="Sorting Hat" class="hat">
 
     <div class="password-form">
-        <h2>Speak the Password</h2>
+        <h2>What do they call you?</h2>
         <input type="password" id="passwordInput" placeholder="Enter password">
         <button onclick="checkPassword()">Submit</button>
         <div id="errorMessage" class="error-message">
@@ -97,13 +84,12 @@
             const message = document.getElementById('sortingMessage');
             const errorMessage = document.getElementById('errorMessage');
             
-            if (password === 'Gaithre') {
+            if (password === 'Shon') {
                 document.querySelector('.password-form').style.display = 'none';
                 message.style.display = 'block';
                 errorMessage.style.display = 'none';
             } else {
                 errorMessage.style.display = 'block';
-                // Clear the password input
                 document.getElementById('passwordInput').value = '';
             }
         }
