@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magical Sorting Page</title>
+    <title>Magical Testing Page</title>
     <style>
+        /* ADDED: Custom cursor for the entire page */
         body {
             background: #1a1a2e;
             color: #fff;
@@ -15,13 +16,12 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
+            cursor: url('cursor.png'), auto;  /* ADDED: Custom cursor */
         }
-        /* Add to the body style */
-        body {
-            cursor: url('cursor.png'), auto;  /* Default cursor for everything */
-        
+        /* ADDED: Different cursor for clickable elements */
+        button, input {
+            cursor: url('cursor.png'), pointer;  /* ADDED: Custom cursor for interactive elements */
         }
-        /* MODIFIED: Updated hat class for GIF dimensions */
         .hat {
             width: 300px;
             height: 300px;
@@ -47,7 +47,6 @@
             border: none;
             padding: 0.5rem 1rem;
             border-radius: 5px;
-            cursor: pointer;
         }
         button:hover {
             background: #357abd;
@@ -68,7 +67,7 @@
     </style>
 </head>
 <body>
-    <img src="sorting-hat.gif" alt="Sorting Hat" class="hat">
+    <img src="sortinghat.gif" alt="Sorting Hat" class="hat">
 
     <div class="password-form">
         <h2>What do they call you?</h2>
